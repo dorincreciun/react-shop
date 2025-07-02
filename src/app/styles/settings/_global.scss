@@ -1,0 +1,17 @@
+@use 'mixins' as mixin;
+@use 'variables' as variable;
+
+.layout-app {
+    padding-inline: clamp(1rem, 2vw, 4rem);
+    margin: 0 auto;
+
+    @each $name, $value in variable.$breakpoints {
+        @include mixin.media($name) {
+            max-width: $value;
+        }
+    }
+
+    &--fluid {
+        max-width: none;
+    }
+}
