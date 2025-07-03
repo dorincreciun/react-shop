@@ -1,10 +1,11 @@
 import {Link} from "react-router";
 import {APP_ROUTES} from "@/app/routing";
+import {PageTemplate} from "@/shared";
 
 export const NotFound = () => {
     return (
-        <div className="min-h-screen flex items-center justify-center">
-            <div className="text-center">
+        <PageTemplate className="flex items-center justify-center">
+            <div className="text-center animate-fade-in">
                 <h1 className="text-6xl font-bold text-slate-100 mb-4">404</h1>
                 <h2 className="text-2xl font-semibold text-slate-300 mb-4">
                     Pagina nu a fost găsită
@@ -19,6 +20,6 @@ export const NotFound = () => {
                     Înapoi la Acasă
                 </Link>
             </div>
-        </div>
+        </PageTemplate>
     )
 }

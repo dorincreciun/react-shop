@@ -1,6 +1,8 @@
-import {BellIcon, ShoppingBagIcon, UserPlusIcon} from "@heroicons/react/16/solid";
+import { ShoppingBagIcon} from "@heroicons/react/16/solid";
 import {HeaderTop} from "./section/HeaderTop.tsx";
 import {ButtonIcon} from "@/shared";
+import {AuthButton} from "@/features/auth";
+import {Menu} from "@/features";
 
 export const Header = () => {
     return (
@@ -16,26 +18,12 @@ export const Header = () => {
                     </div>
 
                     {/* Navigation */}
-                    <nav className="hidden md:flex items-center space-x-8">
-                        <a href="#" className="text-slate-300 hover:text-slate-100 transition-colors font-medium">
-                            Acasă
-                        </a>
-                        <a href="#" className="text-slate-300 hover:text-slate-100 transition-colors font-medium">
-                            Produse
-                        </a>
-                        <a href="#" className="text-slate-300 hover:text-slate-100 transition-colors font-medium">
-                            Despre
-                        </a>
-                        <a href="#" className="text-slate-300 hover:text-slate-100 transition-colors font-medium">
-                            Contact
-                        </a>
-                    </nav>
+                    <Menu />
 
                     {/* Actions */}
                     <div className="flex items-center space-x-4">
                         <ButtonIcon badge={{count: 100}} icon={<ShoppingBagIcon className="h-6 w-6"/>}/>
-                        <ButtonIcon icon={<UserPlusIcon className="h-6 w-6"/>}/>
-                        <ButtonIcon icon={<BellIcon className="h-6 w-6"/>}/>
+                        <AuthButton />
                     </div>
                 </div>
             </div>
