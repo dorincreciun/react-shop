@@ -4,5 +4,5 @@ import {cn} from "@sglara/cn";
 
 
 export const PageTemplate: FC<PageTemplateProps> = ({ children, className }) => {
-    return <main className={cn('flex-1', className)}>{children}</main>
+    return <main className={cn('flex-1 animate-fade-in max-w-[1440px] w-full mx-auto px-4', className)}>{children}</main>
 }

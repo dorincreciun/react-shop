@@ -5,7 +5,7 @@ import {PageTemplate} from "@/shared";
 export const NotFound = () => {
     return (
         <PageTemplate className="flex items-center justify-center">
-            <div className="text-center animate-fade-in">
+            <div className="text-center">
                 <h1 className="text-6xl font-bold text-slate-100 mb-4">404</h1>
                 <h2 className="text-2xl font-semibold text-slate-300 mb-4">
                     Pagina nu a fost găsită

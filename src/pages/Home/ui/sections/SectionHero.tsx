@@ -5,7 +5,7 @@ import {APP_ROUTES} from "@/app/routing";
 export const SectionHero = () => {
     const navigate = useNavigate()
     return (
-        <div className="text-center py-16 px-4 animate-fade-in">
+        <div className="text-center py-16 px-4">
             {/* Titlu */}
             <h1 className="text-5xl md:text-6xl font-bold text-slate-100 mb-6 leading-tight">
                 Descoperă <span className="text-slate-300">Calitatea</span><br />
