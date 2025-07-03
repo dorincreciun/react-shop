@@ -2,7 +2,7 @@ import { useAuth } from "@/features/auth";
 import { Navigate, Outlet } from "react-router-dom";
 import { APP_ROUTES } from "@/app/routing";
 
-export const ProtectedRoute = () => {
+export const AuthGuard = () => {
     const { isAuthorization } = useAuth();
 
     if (!isAuthorization) {
