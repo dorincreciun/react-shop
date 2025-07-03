@@ -1,3 +1,6 @@
+import {Link} from "react-router";
+import {APP_ROUTES} from "@/app/routing";
+
 export const NotFound = () => {
     return (
         <div className="min-h-screen flex items-center justify-center">
@@ -9,12 +12,12 @@ export const NotFound = () => {
                 <p className="text-slate-400 mb-8">
                     Pagina pe care o căutați nu există sau a fost mutată.
                 </p>
-                <a 
-                    href="/" 
+                <Link
+                    to={APP_ROUTES.HOME}
                     className="inline-block bg-slate-700 hover:bg-slate-600 text-slate-100 px-6 py-3 rounded-lg transition-colors"
                 >
                     Înapoi la Acasă
-                </a>
+                </Link>
             </div>
         </div>
     )
