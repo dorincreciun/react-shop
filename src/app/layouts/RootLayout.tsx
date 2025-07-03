@@ -3,7 +3,7 @@ import {Footer, Header} from "@/widgets";
 
 export const RootLayout = () => {
     return (
-        <div className={'layout-app'}>
+        <div className='min-h-screen flex flex-col'>
             <Header/>
             <AppRouter/>
             <Footer/>
