@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+button {
+    cursor: pointer;
+}
+
 body {
     background: #0f0f0f;  /* fallback for old browsers */
     background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #000000 100%);
