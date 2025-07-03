@@ -2,7 +2,7 @@ import {useAuth} from "@/features/auth";
 import {UserCircleIcon, UserPlusIcon} from "@heroicons/react/16/solid";
 import {ButtonIcon} from "@/shared";
 
-export const AuthButton = () => {
+export const ButtonAuth = () => {
     const {isAuthorization} = useAuth()
 
     if (isAuthorization) {

@@ -1,8 +1,7 @@
-import { ShoppingBagIcon} from "@heroicons/react/16/solid";
 import {HeaderTop} from "./section/HeaderTop.tsx";
-import {ButtonIcon} from "@/shared";
-import {AuthButton} from "@/features/auth";
-import {Menu} from "@/features";
+import {ButtonAuth, ButtonCart, Menu} from "@/features";
+import {APP_ROUTES} from "@/app/routing";
+import {Link} from "react-router";
 
 export const Header = () => {
     return (
@@ -12,9 +11,7 @@ export const Header = () => {
                 <div className="flex items-center justify-between">
                     {/* Logo/Brand */}
                     <div className="flex items-center">
-                        <h1 className="text-2xl font-bold text-slate-100">
-                            ReactShop
-                        </h1>
+                        <Link to={APP_ROUTES.HOME} className='text-2xl font-bold text-slate-100'>ReactShop</Link>
                     </div>
 
                     {/* Navigation */}
@@ -22,8 +19,8 @@ export const Header = () => {
 
                     {/* Actions */}
                     <div className="flex items-center space-x-4">
-                        <ButtonIcon badge={{count: 100}} icon={<ShoppingBagIcon className="h-6 w-6"/>}/>
-                        <AuthButton />
+                        <ButtonCart/>
+                        <ButtonAuth/>
                     </div>
                 </div>
             </div>
