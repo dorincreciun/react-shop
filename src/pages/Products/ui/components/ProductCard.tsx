@@ -1,12 +1,12 @@
 import watch from "../../../../../public/watch.webp";
 import {ButtonIcon} from "@/shared";
-import {ShoppingBagIcon} from "@heroicons/react/16/solid";
+import {HeartIcon, ScaleIcon, ShoppingBagIcon} from "@heroicons/react/16/solid";
 
 
 export const ProductCard = () => {
     return (
         <div
-            className="bg-slate-800/30 p-6 group rounded-2xl border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300 flex flex-col justify-between shadow-md hover:shadow-xl"
+            className="bg-slate-800/30 overflow-hidden relative p-6 group rounded-2xl border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300 flex flex-col justify-between shadow-md hover:shadow-xl"
         >
             {/* Image bg-slate-700/40 rounded-xl overflow-hidden */}
             <div className="h-[220px]  flex items-center justify-center">
@@ -38,6 +38,12 @@ export const ProductCard = () => {
 
                     <ButtonIcon icon={<ShoppingBagIcon className="h-6 w-6" />} />
                 </div>
+            </div>
+
+            {/* Absolute content */}
+            <div className='absolute right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                <ButtonIcon className='hover:text-red-500' icon={<HeartIcon className="h-6 w-6" />} />
+                <ButtonIcon icon={<ScaleIcon className="h-6 w-6" />} />
             </div>
         </div>
     )
