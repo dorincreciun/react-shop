@@ -1,3 +1,5 @@
+import type {ReactNode} from "react";
+
 export type ProductCardType = {
     id: number;
     name: string;
@@ -6,4 +8,15 @@ export type ProductCardType = {
     barcode: number;
     description: string;
     thumbnail: string
+}
+
+export type TrustCardType = {
+    icon: ReactNode
+    name: string;
+    description: string;
+}
+
+export type SpecificationCardType = {
+    name: string;
+    description: string;
 }
