@@ -2,7 +2,8 @@ import type {ReactNode} from "react";
 
 export type AuthType = {
     isAuthorization: boolean;
-    setIsAuthorization: (val: boolean) => void;
+    setLogin: () => void;
+    setLogout: () => void;
 };
 
 export type AuthProviderType = {

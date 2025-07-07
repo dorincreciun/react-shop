@@ -1,4 +1,3 @@
 export type {AuthType} from './model/types'
-export {AuthProvider} from './model/provider/AuthProvider'
-export {useAuth} from './model/hook/useAuth'
+export {useAuthStore} from './model/store.ts'
 export {ButtonAuth} from './ui/ButtonAuth.tsx'

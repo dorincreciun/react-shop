@@ -1,9 +1,9 @@
-import { useAuth } from "@/features/auth";
-import { Navigate, Outlet } from "react-router-dom";
-import { APP_ROUTES } from "@/app/routing";
+import {useAuthStore} from "@/features/auth";
+import {Navigate, Outlet} from "react-router-dom";
+import {APP_ROUTES} from "@/app/routing";
 
 export const AuthGuard = () => {
-    const { isAuthorization } = useAuth();
+    const {isAuthorization} = useAuthStore();
 
     if (!isAuthorization) {
         return (
