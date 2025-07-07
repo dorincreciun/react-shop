@@ -18,8 +18,6 @@ export const ProductPage = () => {
 
     if (error) return <p className="text-slate-400 mb-4">Nu s-a putut încărca produsul</p>
 
-    // const discountedPrice = data.price - (data.price * (data.discountPercentage / 100));
-
     return (
         <PageTemplate>
 
