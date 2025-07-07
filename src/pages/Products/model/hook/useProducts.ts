@@ -1,20 +1,8 @@
-import { useEffect, useState } from "react";
-import type {ProductCardType} from "@/pages/Products/model/types.ts";
+import {useQuery} from "@tanstack/react-query";
 
 export const useProducts = () => {
-    const [products, setProducts] = useState<ProductCardType[] | null>(null);
-
-    useEffect(() => {
-        fetch('https://dummyjson.com/products')
-            .then((res) => res.json())
-            .then((data) => {
-                setProducts(data.products);
-            })
-            .catch((error) => {
-                console.error("Error fetching products:", error);
-                setProducts([]);
-            });
-    }, []);
-
-    return products;
+    return useQuery({
+        queryKey: ['products'],
+        queryFn: () => fetch('https://dummyjson.com/products').then(res => res.json())
+    })
 };
