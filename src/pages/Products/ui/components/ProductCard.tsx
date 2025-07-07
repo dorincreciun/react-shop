@@ -17,6 +17,7 @@ export const ProductCard: FC<ProductCardType> = (props) => {
                 <img
                     src={thumbnail}
                     alt={description}
+                    loading={'lazy'}
                     className="object-contain max-h-full max-w-full transition-transform duration-300 group-hover:scale-105"
                 />
             </div>
