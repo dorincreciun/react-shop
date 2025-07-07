@@ -1,8 +1,7 @@
 import {useParams} from "react-router";
 import {useProductDetails} from "@/pages/Products/model/hook/useProductDetails.ts";
-import {PageTemplate} from "@/shared";
-import {HeartIcon, ScaleIcon, StarIcon, TruckIcon, ShieldCheckIcon} from "@heroicons/react/16/solid";
-import {ButtonIcon} from "@/shared";
+import {ButtonIcon, PageTemplate} from "@/shared";
+import {MinusIcon, PlusIcon, ShieldCheckIcon, StarIcon, TruckIcon, ShoppingBagIcon} from "@heroicons/react/16/solid";
 import {TrustCard} from "@/pages/Products/ui/components/TrustCard.tsx";
 import {SpecificationCard} from "@/pages/Products/ui/components/SpecificationCard.tsx";
 
@@ -42,17 +41,6 @@ export const ProductPage = () => {
                                             -{data.discountPercentage}%
                                     </span>
                                 </div>
-
-                                {/* Action Buttons */}
-                                <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <ButtonIcon 
-                                        className="hover:text-red-500" 
-                                        icon={<HeartIcon className="h-6 w-6" />} 
-                                    />
-                                    <ButtonIcon 
-                                        icon={<ScaleIcon className="h-6 w-6" />} 
-                                    />
-                                </div>
                             </div>
                         </div>
 
@@ -68,42 +56,71 @@ export const ProductPage = () => {
                                 </span>
                             </div>
 
-                            {/* Title */}
-                            <h1 className="text-4xl lg:text-5xl font-bold text-slate-100 leading-tight">
-                                {data.title}
-                            </h1>
+                            {/* Title and Description */}
+                            <div>
+                                <h1 className="text-3xl lg:text-4xl font-bold text-slate-100 leading-tight mb-4">
+                                    {data.title}
+                                </h1>
 
-                            {/* Description */}
-                            <p className="text-slate-400 text-lg leading-relaxed">
-                                {data.description}
-                            </p>
+                                <p className="text-slate-400 text-base leading-relaxed">
+                                    {data.description}
+                                </p>
+                            </div>
 
-                            {/* Price Section */}
-                            {/*<div className="bg-slate-800/20 p-6 rounded-xl border border-slate-600/20">*/}
-                            {/*    <div className="mb-6">*/}
-                            {/*        <div className="flex items-center gap-3 mb-2">*/}
-                            {/*            <span className="text-5xl font-bold text-green-400">*/}
-                            {/*                {discountedPrice.toFixed(2)}*/}
-                            {/*            </span>*/}
-                            {/*            <span className="text-2xl text-green-400 font-medium">lei</span>*/}
-                            {/*        </div>*/}
-                            {/*        <div className="flex items-center gap-3">*/}
-                            {/*            <span className="text-xl text-slate-400/60 line-through">*/}
-                            {/*                {data.price} lei*/}
-                            {/*            </span>*/}
-                            {/*            <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full font-semibold border border-red-500/30">*/}
-                            {/*                Economisești {(data.price - discountedPrice).toFixed(2)} lei*/}
-                            {/*            </span>*/}
-                            {/*        </div>*/}
-                            {/*    </div>*/}
-                            {/*    */}
-                            {/*    <ButtonIcon */}
-                            {/*        className="w-full bg-slate-700/30 hover:bg-slate-600/30 text-slate-100 py-4 px-6 rounded-lg transition-colors duration-200 text-lg font-semibold"*/}
-                            {/*        icon={<ShoppingBagIcon className="h-6 w-6" />}*/}
-                            {/*    >*/}
-                            {/*        Adaugă în coș*/}
-                            {/*    </ButtonIcon>*/}
-                            {/*</div>*/}
+                            <div>
+
+                                {/* Count */}
+                                <div className='bg-slate-800/30 flex items-center justify-center gap-x-6 max-w-max overflow-hidden relative p-2 rounded-2xl border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300 shadow-md hover:shadow-xl'>
+                                    <ButtonIcon icon={<MinusIcon className="h-6 w-6" />} />
+                                    <span className='text-base font-medium'>1</span>
+                                    <ButtonIcon icon={<PlusIcon className="h-6 w-6" />} />
+                                </div>
+
+                                {/* Price & Discount */}
+                                <div className="mt-8">
+                                    {/* Main Price Card */}
+                                    <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/40 p-6 rounded-2xl border border-slate-600/30 mb-6">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <div>
+                                                <div className="text-2xl font-bold text-slate-100 mb-1">
+                                                    {(data.price - (data.price * (data.discountPercentage / 100))).toFixed(2)} lei
+                                                </div>
+                                                <div className="text-sm text-slate-400">
+                                                    Preț final
+                                                </div>
+                                            </div>
+                                            <div className="text-right">
+                                                <div className="text-base text-slate-400 line-through mb-1">
+                                                    {data.price} lei
+                                                </div>
+                                                <div className="text-xs text-slate-500">
+                                                    Preț original
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                                                <span className="text-sm text-green-400 font-medium">
+                                                    Economisești {((data.price * (data.discountPercentage / 100))).toFixed(2)} lei
+                                                </span>
+                                            </div>
+                                            <div className="px-3 py-1 bg-red-500/20 text-red-400 text-sm font-medium rounded-full">
+                                                -{data.discountPercentage}%
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Add to Cart Button */}
+                                    <ButtonIcon 
+                                        className="w-full bg-slate-700/50 hover:bg-slate-600/50 text-slate-100 py-4 px-6 rounded-xl transition-all duration-300 text-base font-semibold border border-slate-600/30 hover:border-slate-500/50"
+                                        icon={<ShoppingBagIcon className="h-6 w-6" />}
+                                    >
+                                        Adaugă în coș
+                                    </ButtonIcon>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,7 +136,7 @@ export const ProductPage = () => {
 
                 {/* Product Specifications */}
                 <div className="bg-slate-800/20 p-8 rounded-2xl border border-slate-600/20">
-                    <h2 className="text-2xl font-bold text-slate-100 mb-8 text-center">Specificații produs</h2>
+                    <h2 className="text-xl font-bold text-slate-100 mb-8 text-center">Specificații produs</h2>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <SpecificationCard name={'Brand'} description={data.brand}/>
