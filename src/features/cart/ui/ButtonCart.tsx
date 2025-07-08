@@ -5,8 +5,7 @@ export const ButtonCart = () => {
     return (
         <Button
             content={'icon'}
-            variant={'primary'}
-            size={'medium'}
+            size={'small'}
             badge={10}
             icon={<ShoppingBagIcon className="h-6 w-6"/>}
         />

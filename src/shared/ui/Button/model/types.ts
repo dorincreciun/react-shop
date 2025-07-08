@@ -41,7 +41,7 @@ export interface TextButtonProps extends BaseButtonProps {
 export interface IconButtonProps extends BaseButtonProps {
     content: "icon";
     icon: SvgIconType;
-    variant: never;
+    variant?: never;
     label?: never;
     iconPosition?: never;
 }
