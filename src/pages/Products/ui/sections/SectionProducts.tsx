@@ -1,6 +1,5 @@
+import {ProductCard, type ProductCardType} from "@/entities/Product";
 import {useProducts} from "@/pages/Products/model/hook/useProducts.ts";
-import {ProductCard} from "@/pages/Products/ui/components/ProductCard.tsx";
-import type {ProductCardType} from "@/pages/Products/model/types.ts";
 
 
 export const SectionProducts = () => {
