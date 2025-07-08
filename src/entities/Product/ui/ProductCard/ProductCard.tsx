@@ -29,8 +29,14 @@ export const ProductCard: FC<ProductCardType> = (props) => {
             {/* Absolute content */}
             <div
                 className='absolute right-4 flex flex-col z-20 gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                <Button content={'icon'} icon={<HeartIcon className="h-6 w-6"/>} variant={'primary'} size={'medium'} />
-                <Button content={'icon'} icon={<ScaleIcon className="h-6 w-6"/>} variant={'primary'} size={'medium'} />
+                <Button
+                    content={'icon'}
+                    icon={<HeartIcon className="h-6 w-6"/>}
+                />
+                <Button
+                    content={'icon'}
+                    icon={<ScaleIcon className="h-6 w-6"/>}
+                />
             </div>
 
             <Link to={`${APP_ROUTES.PRODUCTS}/${id}`} className="absolute inset-0 z-10"></Link>

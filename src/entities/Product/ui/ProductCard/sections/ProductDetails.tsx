@@ -25,7 +25,10 @@ export const ProductDetails: FC<ProductDetailsType> = (props) => {
                     <p className="text-slate-400 font-medium text-lg">{(price - (price * (discountPercentage / 100))).toFixed(2)} lei</p>
                 </div>
 
-                <Button content={'icon'} icon={<ShoppingBagIcon className="h-6 w-6"/>} variant={'primary'} size={'medium'} />
+                <Button
+                    content={'icon'}
+                    icon={<ShoppingBagIcon className="h-6 w-6 z-30"/>}
+                />
             </div>
         </div>
     )

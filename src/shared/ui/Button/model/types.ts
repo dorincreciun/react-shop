@@ -20,7 +20,6 @@ export type ButtonIconPositionType = "left" | "right";
  * Tipul general pentru toate butoanele.
  */
 interface BaseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    size: ButtonSizeType;
     badge?: number;
 }
 
@@ -30,6 +29,7 @@ interface BaseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export interface TextButtonProps extends BaseButtonProps {
     content: "text";
     variant: ButtonVariantsType;
+    size: ButtonSizeType;
     label: string;
     icon?: never;
     iconPosition?: never;
@@ -42,6 +42,7 @@ export interface IconButtonProps extends BaseButtonProps {
     content: "icon";
     icon: SvgIconType;
     variant?: never;
+    size?: never;
     label?: never;
     iconPosition?: never;
 }
@@ -53,6 +54,7 @@ export interface IconTextButtonProps extends BaseButtonProps {
     content: "icon-text";
     label: string;
     variant: ButtonVariantsType;
+    size: ButtonSizeType;
     icon: SvgIconType;
     iconPosition: ButtonIconPositionType;
 }
