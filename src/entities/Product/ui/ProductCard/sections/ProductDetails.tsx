@@ -2,10 +2,12 @@ import type {FC} from "react";
 import type {ProductDetailsType} from "../../../model/types/ProductCard";
 import {Button} from "@/shared";
 import {ShoppingBagIcon} from "@heroicons/react/16/solid";
+import {calculateDiscount} from "@/entities/Product/lib/calculateDiscount.ts";
 
 
 export const ProductDetails: FC<ProductDetailsType> = (props) => {
     const {name, barcode, price, discountPercentage} = props
+    const finalPrice:string = calculateDiscount(price, discountPercentage)
     return (
         <div className="flex flex-col gap-3 mt-6 flex-1">
             {/* Title & Desc */}
@@ -22,7 +24,7 @@ export const ProductDetails: FC<ProductDetailsType> = (props) => {
             <div className="flex items-end justify-between mt-auto pt-4">
                 <div className='flex flex-col items-start'>
                     <p className="text-slate-400/50 font-medium text-sm line-through">{price} lei</p>
-                    <p className="text-slate-400 font-medium text-lg">{(price - (price * (discountPercentage / 100))).toFixed(2)} lei</p>
+                    <p className="text-slate-400 font-medium text-lg">{finalPrice} lei</p>
                 </div>
 
                 <Button
