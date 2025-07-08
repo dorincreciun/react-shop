@@ -20,12 +20,12 @@ export const AuthPage = () => {
                         />
 
                         <Button
-                            variants="primary"
-                            size="medium"
-                            className="w-full"
-                        >
-                            Conectare
-                        </Button>
+                            content={'text'}
+                            size={'medium'}
+                            variant={'primary'}
+                            label={'Conectare'}
+                        />
+
                     </form>
                 </div>
             </div>

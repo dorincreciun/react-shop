@@ -1,15 +1,17 @@
 import type {FC} from "react";
-import type {NewButtonType} from "@/shared/ui/NewButton/model/types.ts";
-import {ButtonStyle} from "@/shared/ui/NewButton/ui/style.ts";
+import type {ButtonType} from "@/shared/ui/Button/model/types.ts";
+import {ButtonStyle} from "@/shared/ui/Button/ui/style.ts";
 import {cn} from "@sglara/cn";
+import {Badge} from "@/shared/ui/Button/ui/components/Badge.tsx";
 
-export const NewButton: FC<NewButtonType> = ({
+export const Button: FC<ButtonType> = ({
     variant = "primary",
     size = "small",
     iconPosition = "right",
     icon,
     content,
     label,
+    badge,
     className,
     ...rest
 }) => {
@@ -30,6 +32,7 @@ export const NewButton: FC<NewButtonType> = ({
                     {iconPosition === "right" && icon}
                 </>
             )}
+            {badge && <Badge count={badge} />}
         </button>
     )
 }

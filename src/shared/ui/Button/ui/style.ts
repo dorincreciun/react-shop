@@ -1,6 +1,6 @@
 import {cva} from "class-variance-authority";
 
-export const ButtonStyle = cva("rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105", {
+export const ButtonStyle = cva("rounded-lg relative flex items-center justify-center transition-all duration-300 hover:scale-105", {
     variants: {
         variant: {
             primary: "bg-slate-700 hover:bg-slate-600 text-white",

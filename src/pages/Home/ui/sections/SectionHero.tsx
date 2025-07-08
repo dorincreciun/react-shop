@@ -1,6 +1,6 @@
-import {Button} from "@/shared";
 import {useNavigate} from "react-router";
 import {APP_ROUTES} from "@/app/routing";
+import {Button} from "@/shared/ui/Button/ui";
 
 export const SectionHero = () => {
     const navigate = useNavigate()
@@ -17,8 +17,24 @@ export const SectionHero = () => {
             </p>
             {/* Butoane CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button onClick={() => navigate(APP_ROUTES.PRODUCTS)} variants='primary' size='medium'>Explorează Produsele</Button>
-                <Button onClick={() => navigate(APP_ROUTES.ABOUT)} variants='secondary' size='medium'>Află Mai Multe</Button>
+                <Button
+                    size={"medium"}
+                    content={"text"}
+                    variant={"primary"}
+                    label={"Explorează Produsele"}
+                    onClick={(): void => {
+                        navigate(APP_ROUTES.PRODUCTS)
+                    }}
+                />
+                <Button
+                    size={"medium"}
+                    content={"text"}
+                    variant={"secondary"}
+                    label={"Află Mai Multe"}
+                    onClick={(): void => {
+                        navigate(APP_ROUTES.ABOUT)
+                    }}
+                />
             </div>
         </div>
     )

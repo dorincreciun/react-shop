@@ -1,6 +1,6 @@
 import type {FC} from "react";
 import type {ProductDetailsType} from "../../../model/types/ProductCard";
-import {ButtonIcon} from "@/shared";
+import {Button} from "@/shared";
 import {ShoppingBagIcon} from "@heroicons/react/16/solid";
 
 
@@ -25,7 +25,7 @@ export const ProductDetails: FC<ProductDetailsType> = (props) => {
                     <p className="text-slate-400 font-medium text-lg">{(price - (price * (discountPercentage / 100))).toFixed(2)} lei</p>
                 </div>
 
-                <ButtonIcon icon={<ShoppingBagIcon className="h-6 w-6"/>}/>
+                <Button content={'icon'} icon={<ShoppingBagIcon className="h-6 w-6"/>} variant={'primary'} size={'medium'} />
             </div>
         </div>
     )

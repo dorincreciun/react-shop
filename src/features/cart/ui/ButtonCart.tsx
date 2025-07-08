@@ -1,6 +1,14 @@
 import {ShoppingBagIcon} from "@heroicons/react/16/solid";
-import {ButtonIcon} from "@/shared";
+import {Button} from "@/shared";
 
 export const ButtonCart = () => {
-    return <ButtonIcon badge={{count: 100}} icon={<ShoppingBagIcon className="h-6 w-6"/>}/>
+    return (
+        <Button
+            content={'icon'}
+            variant={'primary'}
+            size={'medium'}
+            badge={10}
+            icon={<ShoppingBagIcon className="h-6 w-6"/>}
+        />
+    )
 }

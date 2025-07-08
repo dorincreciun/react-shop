@@ -1,11 +1,11 @@
-import {ButtonIcon} from "@/shared";
 import {HeartIcon, ScaleIcon} from "@heroicons/react/16/solid";
 import {Link} from "react-router";
 import {APP_ROUTES} from "@/app/routing";
 import type {FC} from "react";
-import type {ProductCardType} from "../../model/types/ProductCard";
+import type {ProductCardType} from "@/entities/Product";
 import {ProductImage} from "./sections/ProductImage";
 import {ProductDetails} from "./sections/ProductDetails";
+import {Button} from "@/shared";
 
 
 export const ProductCard: FC<ProductCardType> = (props) => {
@@ -29,8 +29,8 @@ export const ProductCard: FC<ProductCardType> = (props) => {
             {/* Absolute content */}
             <div
                 className='absolute right-4 flex flex-col z-20 gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                <ButtonIcon className='hover:text-red-500' icon={<HeartIcon className="h-6 w-6"/>}/>
-                <ButtonIcon icon={<ScaleIcon className="h-6 w-6"/>}/>
+                <Button content={'icon'} icon={<HeartIcon className="h-6 w-6"/>} variant={'primary'} size={'medium'} />
+                <Button content={'icon'} icon={<ScaleIcon className="h-6 w-6"/>} variant={'primary'} size={'medium'} />
             </div>
 
             <Link to={`${APP_ROUTES.PRODUCTS}/${id}`} className="absolute inset-0 z-10"></Link>
