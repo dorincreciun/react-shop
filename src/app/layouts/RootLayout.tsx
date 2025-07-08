@@ -1,5 +1,6 @@
 import {AppRouter} from "@/app/routing";
 import {Footer, Header} from "@/widgets";
+import {Loader} from "@/shared";
 
 export const RootLayout = () => {
     return (
@@ -14,6 +15,9 @@ export const RootLayout = () => {
                 {/* Grid pattern */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
             </div>
+
+            {/* Loader */}
+            <Loader />
 
             {/* Main content */}
             <div className="relative z-10 flex flex-col min-h-screen">

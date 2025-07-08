@@ -1,8 +1,18 @@
-import {useQuery} from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { useLoaderStore } from "@/shared/model/store/LoaderStore.ts";
 
 export const useProducts = () => {
-    return useQuery({
-        queryKey: ['products'],
-        queryFn: () => fetch('https://dummyjson.com/products').then(res => res.json())
-    })
+    const { show, hide } = useLoaderStore();
+
+    return useQuery(
+        ['products'],
+        async () => {
+            show();
+            const res = await fetch('https://dummyjson.com/products');
+            return await res.json();
+        },
+        {
+            onSettled: () => hide(),
+        }
+    );
 };

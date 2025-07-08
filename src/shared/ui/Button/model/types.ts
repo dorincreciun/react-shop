@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
-import type {SvgIconType} from "@/shared/types/global";
+import type {SvgIconType} from "@/shared/model/types/global";
 
 /**
  * Variantele stilistice de buton.
