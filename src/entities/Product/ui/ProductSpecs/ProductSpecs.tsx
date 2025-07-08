@@ -10,7 +10,8 @@ export const ProductSpecs: FC<ProductSpecsType> = ({specifications}) => {
                 specifications.map((spec: ProductSpecType, index: number) => (
                     <ProductSpec
                         key={index}
-                        {...spec}
+                        name={spec?.name}
+                        description={spec?.description}
                     />
                 ))
             }
