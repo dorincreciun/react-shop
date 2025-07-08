@@ -1,0 +1,1 @@
+export type SvgIconType = ReactElement<SVGProps<SVGSVGElement>, "svg">;
