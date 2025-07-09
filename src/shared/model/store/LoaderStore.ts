@@ -1,13 +1,8 @@
-import { create } from "zustand";
+import {create} from "zustand"
+import type {LoaderType} from "@/shared/model/types/Loader.ts";
 
-interface LoaderState {
-    isLoading: boolean;
-    show: () => void;
-    hide: () => void;
-}
-
-export const useLoaderStore = create<LoaderState>((set) => ({
-    isLoading: false,
-    show: () => set({ isLoading: true }),
-    hide: () => set({ isLoading: false }),
-}));
+export const useLoaderStore = create<LoaderType>(set => ({
+    visible: false,
+    show: (): void => set({visible: true}),
+    hide: (): void => set({visible: false}),
+}))

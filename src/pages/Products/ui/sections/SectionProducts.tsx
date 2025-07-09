@@ -1,33 +1,17 @@
-import {ProductCard, type ProductCardType} from "@/entities/Product";
 import {useProducts} from "@/pages/Products/model/hook/useProducts.ts";
-
+import {ProductCard, type ProductCardType} from "@/entities/Product";
 
 export const SectionProducts = () => {
-    const {isLoading, data} = useProducts()
-
-    if (isLoading) {
-        return <p className="text-white text-center">Se încarcă produsele...</p>;
-    }
+    const {data, isLoading} = useProducts();
+    if (isLoading) return null;
 
     return (
         <section className="max-w-[1400px] mx-auto px-4 py-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {
-                    data.products.map((product: ProductCardType) => {
-                        const {id, name, price, discountPercentage, barcode, description, thumbnail} = product;
-                        return (
-                            <ProductCard
-                                key={id}
-                                id={id}
-                                name={name}
-                                price={price}
-                                barcode={barcode}
-                                thumbnail={thumbnail}
-                                description={description}
-                                discountPercentage={discountPercentage}
-                            />
-                        )
-                    })
+                    data.products.map((product: ProductCardType) => (
+                        <ProductCard key={product.id} {...product} />
+                    ))
                 }
             </div>
         </section>
