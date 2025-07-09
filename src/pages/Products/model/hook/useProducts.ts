@@ -1,18 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
-import { useLoaderStore } from "@/shared/model/store/LoaderStore.ts";
+import { useQuery } from '@tanstack/react-query';
 
 export const useProducts = () => {
-    const { show, hide } = useLoaderStore();
-
-    return useQuery(
-        ['products'],
-        async () => {
-            show();
-            const res = await fetch('https://dummyjson.com/products');
-            return await res.json();
+    return useQuery({
+        queryKey: ['products'],
+        queryFn: async () => {
+            const response = await fetch('https://dummyjson.com/products');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
         },
-        {
-            onSettled: () => hide(),
-        }
-    );
+    });
 };
