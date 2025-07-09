@@ -10,7 +10,8 @@ export const MenuNavLink: FC<MenuNavLinkType> = ({to, name}) => {
             className={({isActive}) =>
                 cn(
                     "hover:text-slate-100 transition-colors font-medium",
-                    isActive ? "text-slate-500" : "text-slate-300"
+                    isActive ? "text-slate-500"
+                             : "text-slate-300"
                 )
             }
         >

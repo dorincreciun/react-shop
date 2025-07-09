@@ -8,11 +8,10 @@ export const Menu = () => {
         <div>
             <ul className='flex items-center space-x-8'>
                 {
-                    items.map(item => {
-                        const {to, name} = item
+                    items.map((item: MenuNavLinkType) => {
                         return (
-                            <li key={to}>
-                                <MenuNavLink to={to} name={name}/>
+                            <li key={item.to}>
+                                <MenuNavLink {...item}/>
                             </li>
                         )
                     })

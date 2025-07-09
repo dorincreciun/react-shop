@@ -12,8 +12,6 @@ export const ButtonAuth = () => {
         return (
             <Button
                 content={'icon'}
-                variant={'primary'}
-                size={'medium'}
                 icon={<UserCircleIcon className="h-6 w-6"/>}
             />
         )
@@ -21,8 +19,6 @@ export const ButtonAuth = () => {
         return (
             <Button
                 content={'icon'}
-                variant={'primary'}
-                size={'medium'}
                 icon={<UserPlusIcon className="h-6 w-6"/>}
                 onClick={() => {
                     navigate(APP_ROUTES.LOGIN)

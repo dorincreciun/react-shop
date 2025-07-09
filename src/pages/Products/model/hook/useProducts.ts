@@ -18,5 +18,6 @@ export const useProducts = () => {
                 hide();
             }
         },
+        staleTime: 1000 * 60 * 5
     });
 };

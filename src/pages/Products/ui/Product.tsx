@@ -90,15 +90,11 @@ export const ProductPage = () => {
                                 <div className='bg-slate-800/30 flex items-center justify-center gap-x-6 max-w-max p-2 rounded-2xl border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300 shadow-md hover:shadow-xl'>
                                     <Button
                                         content={'icon'}
-                                        variant={'primary'}
-                                        size={'medium'}
                                         icon={<MinusIcon className="h-6 w-6" />}
                                     />
                                     <span className='text-base font-medium'>1</span>
                                     <Button
                                         content={'icon'}
-                                        variant={'primary'}
-                                        size={'medium'}
                                         icon={<PlusIcon className="h-6 w-6" />}
                                     />
                                 </div>
@@ -112,8 +108,6 @@ export const ProductPage = () => {
                                     />
                                     <Button
                                         content={'icon'}
-                                        variant={'primary'}
-                                        size={'medium'}
                                         icon={<ShoppingBagIcon className="h-6 w-6" />}
                                     />
                                 </div>
