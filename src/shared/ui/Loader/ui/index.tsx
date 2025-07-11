@@ -7,12 +7,15 @@ export const Loader = () => {
     return (
         <div
             className={cn(
-                "inset-0 z-50 flex items-center justify-center transition-opacity duration-300",
-                "bg-slate-900/20 backdrop-blur-md backdrop-saturate-150",
-                visible ? "opacity-100 fixed" : "opacity-0 hidden"
+                "fixed inset-0 z-50 flex items-center justify-center transition-all duration-300",
+                "bg-slate-900/40 backdrop-blur-sm",
+                visible ? "opacity-100" : "opacity-0 pointer-events-none"
             )}
         >
-            <div className="h-7 w-7 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+            {/* Simple spinner */}
+            <div className="relative">
+                <div className="h-8 w-8 border-2 border-slate-600 border-t-blue-500 rounded-full animate-spin" />
+            </div>
         </div>
     )
 };
