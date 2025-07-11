@@ -1,4 +1,4 @@
-import {Input, PageTemplate, Button} from "@/shared";
+import {PageTemplate, Button} from "@/shared";
 
 export const AuthPage = () => {
     return (
@@ -9,15 +9,7 @@ export const AuthPage = () => {
                     <h1 className="text-xl font-bold text-white mb-4">Conectare</h1>
                     
                     <form className="space-y-4">
-                        <Input
-                            type="email"
-                            placeholder="Email"
-                        />
 
-                        <Input
-                            isPassword={true}
-                            placeholder="Parolă"
-                        />
 
                         <Button
                             content={'text'}
