@@ -57,7 +57,7 @@ export const ButtonStyle = cva(
                     "aspect-square"
                 ],
                 "icon-text": [
-                    "font-semibold",
+                    "font-semibold text-base",
                     "gap-x-2"
                 ]
             },

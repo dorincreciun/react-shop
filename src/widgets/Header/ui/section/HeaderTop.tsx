@@ -1,4 +1,5 @@
-import {EnvelopeIcon, GlobeAltIcon, PhoneIcon} from "@heroicons/react/16/solid";
+import {EnvelopeIcon, PhoneIcon} from "@heroicons/react/16/solid";
+import {LanguageSwitcher} from "@/features/language";
 
 export const HeaderTop = () => {
     return (
@@ -15,10 +16,7 @@ export const HeaderTop = () => {
                         <span className="hidden sm:inline text-slate-200 group-hover:text-slate-300">creciundorin25@gmail.com</span>
                     </a>
                 </div>
-                <button className="flex items-center gap-2 hover:text-slate-300 transition-all duration-300 group bg-white/5 hover:bg-white/10 rounded-lg px-3 py-1">
-                    <GlobeAltIcon className="h-5 w-5 text-slate-400 group-hover:scale-110 transition-transform" />
-                    <span className="hidden md:inline text-slate-200 group-hover:text-slate-300 font-medium">RO</span>
-                </button>
+                <LanguageSwitcher />
             </div>
         </div>
     )
