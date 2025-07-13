@@ -3,7 +3,6 @@ import {useProductDetails} from "@/pages/Products/model/hook/useProductDetails.t
 import {Button, PageTemplate} from "@/shared";
 import {MinusIcon, PlusIcon, ShieldCheckIcon, ShoppingBagIcon, StarIcon, TruckIcon} from "@heroicons/react/16/solid";
 import {TrustCard} from "@/shared/ui/TrustCard.tsx";
-import {ProductSpecs} from "@/entities/Product";
 
 export const ProductPage = () => {
     const { product } = useParams<{ product: string }>();
@@ -122,18 +121,6 @@ export const ProductPage = () => {
                     <TrustCard icon={<TruckIcon />} name="Livrare rapidă" description="Livrare în 24-48 ore" />
                     <TrustCard icon={<ShieldCheckIcon />} name="Garanție 2 ani" description="Produs original cu garanție" />
                     <TrustCard icon={<StarIcon />} name="Calitate premium" description="Produse testate și verificate" />
-                </div>
-            </div>
-
-            <div className="bg-slate-800/20 p-8 rounded-2xl border border-slate-600/20">
-                <h2 className="text-xl font-bold text-slate-100 mb-8 text-center">Specificații produs</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <ProductSpecs specifications={[
-                        data.brand,
-                        data.sku,
-                        data.stock,
-                        data.category,
-                    ]} />
                 </div>
             </div>
         </PageTemplate>
