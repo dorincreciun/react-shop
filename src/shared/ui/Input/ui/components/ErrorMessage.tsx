@@ -6,7 +6,7 @@ export const ErrorMessage = ({messages}: { messages: string[] }) => {
                     messages.map((message: string, index: number) => (
                         <li
                             key={index}
-                            className="animate-in slide-in-from-bottom-1 duration-300 ease-out"
+                            className="animate-in slide-in-from-bottom-1 duration-300 ease-out text-start"
                             style={{animationDelay: `${index * 100}ms`}}
                         >
                             {message}
