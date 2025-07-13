@@ -1,4 +1,4 @@
-import {PageTemplate, Button} from "@/shared";
+import {PageTemplate, Button, Input} from "@/shared";
 
 export const AuthPage = () => {
     return (
@@ -10,6 +10,18 @@ export const AuthPage = () => {
                     
                     <form className="space-y-4">
 
+                        {/* Email input */}
+                        <Input
+                            type={'email'}
+                            placeholder={'Email'}
+                        />
+
+                        {/* Password input */}
+                        <Input
+                            type="password"
+                            placeholder={'Password'}
+                            toggleMask
+                        />
 
                         <Button
                             content={'text'}
