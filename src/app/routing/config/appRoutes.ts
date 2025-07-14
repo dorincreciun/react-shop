@@ -4,6 +4,7 @@ export const APP_ROUTES = {
     PRODUCTS: "/products",
     ABOUT: "/about",
     CONTACT: "/contact",
+    CART: "/cart",
 
     /* Auth */
     LOGIN: "/login"

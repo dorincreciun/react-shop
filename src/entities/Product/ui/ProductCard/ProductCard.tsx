@@ -6,10 +6,20 @@ import type {ProductCardType} from "@/entities/Product";
 import {ProductImage} from "./sections/ProductImage";
 import {ProductDetails} from "./sections/ProductDetails";
 import {Button} from "@/shared";
+import {useCart} from "@/features/cart";
 
 
 export const ProductCard: FC<ProductCardType> = (props) => {
     const {id, name, discountPercentage, price, thumbnail, description, barcode} = props;
+    const {dispatch} = useCart();
+
+    const addToCart = () => {
+        dispatch({
+            type: "ADD_TO_CART",
+            newProduct: props
+        })
+    }
+
     return (
         <div
             className="group relative overflow-hidden rounded-2xl border border-slate-600/30 bg-gradient-to-br from-slate-800/40 to-slate-900/40 p-6 shadow-lg backdrop-blur-sm transition-all duration-500 hover:border-slate-500/60 hover:shadow-2xl hover:shadow-slate-900/20 hover:scale-[1.02] hover:bg-gradient-to-br hover:from-slate-800/50 hover:to-slate-900/50"
@@ -23,6 +33,7 @@ export const ProductCard: FC<ProductCardType> = (props) => {
             />
 
             <ProductDetails
+                onClick={addToCart}
                 name={name}
                 barcode={barcode}
                 price={price}

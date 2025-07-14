@@ -1,12 +1,14 @@
 import {Route} from "react-router-dom";
 import {APP_ROUTES} from "@/app/routing";
-import {AboutPage, AuthPage, ContactPage, HomePage, ProductPage, ProductsPage} from "@/pages";
+import {AboutPage, AuthPage, CartPage, ContactPage, HomePage, ProductPage, ProductsPage} from "@/pages";
 
 export const PublicRoutes = () => (
     <>
             <Route path={APP_ROUTES.HOME} element={<HomePage/>}/>
             <Route path={APP_ROUTES.ABOUT} element={<AboutPage/>}/>
             <Route path={APP_ROUTES.CONTACT} element={<ContactPage/>}/>
+            <Route path={APP_ROUTES.CART} element={<CartPage/>}/>
+
 
             {/* Products */}
             <Route path={APP_ROUTES.PRODUCTS}>

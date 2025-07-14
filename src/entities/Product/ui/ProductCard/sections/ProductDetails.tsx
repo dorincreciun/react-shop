@@ -6,8 +6,9 @@ import {calculateDiscount} from "@/entities/Product/lib/calculateDiscount.ts";
 
 
 export const ProductDetails: FC<ProductDetailsType> = (props) => {
-    const {name, barcode, price, discountPercentage} = props
+    const {name, barcode, price, discountPercentage, onClick} = props
     const finalPrice:string = calculateDiscount(price, discountPercentage)
+
     return (
         <div className="flex flex-col gap-3 mt-6 flex-1">
             {/* Title & Desc */}
@@ -28,6 +29,7 @@ export const ProductDetails: FC<ProductDetailsType> = (props) => {
                 </div>
 
                 <Button
+                    onClick={onClick}
                     content={'icon'}
                     icon={<ShoppingBagIcon className="h-6 w-6 z-30"/>}
                 />

@@ -8,6 +8,7 @@ export type ProductImageType = {
 }
 
 export type ProductDetailsType = {
+    onClick: () => void;
     name: string;
     barcode: number;
     price: number;
